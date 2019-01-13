@@ -20,20 +20,27 @@ public class Library : MonoBehaviour
     }
     void Start()
     {
+       //PlayerPrefs.SetString("molecules", "");
         string saved = PlayerPrefs.GetString("molecules");
-        Debug.Log("saved molecules:" + saved);
+        Debug.Log("asdsaved molecules:" + saved);
         if (!string.IsNullOrEmpty(saved))
         {
-            MoleculeLibrary = new List<string>(JsonUtility.FromJson<string[]>(saved));
+            var retrieved = new List<string>(saved.Split(' '));
+            MoleculeLibrary = new List<string>();
+            foreach(var m in retrieved)
+            {
+                AddMoleculeToLibrary(m);
+            }
+            Debug.Log(MoleculeLibrary.Count);
         }
 
         if(MoleculeLibrary.Count==0)
         {
             ToggleVisibility();
             //AddMoleculeToLibrary("H2SO4");
-             AddMoleculeToLibrary("HNO3");
-            AddMoleculeToLibrary("H2O");
-            AddMoleculeToLibrary("CO2");
+            // AddMoleculeToLibrary("HNO3");
+           // AddMoleculeToLibrary("H2O");
+           // AddMoleculeToLibrary("CO2");
             //AddMoleculeToLibrary("H2SO3");
             //AddMoleculeToLibrary("HCN");
             // AddMoleculeToLibrary("H3BO3");
@@ -41,9 +48,9 @@ public class Library : MonoBehaviour
             //AddMoleculeToLibrary("CO");// not supported type
             //AddMoleculeToLibrary("NO2");
             //AddMoleculeToLibrary("SO2");
-            //AddMoleculeToLibrary("SO3");
-            //AddMoleculeToLibrary("H2S");
-            //AddMoleculeToLibrary("HClO4");
+          //  AddMoleculeToLibrary("SO3");
+           // AddMoleculeToLibrary("H2S");
+           // AddMoleculeToLibrary("HClO4");
             //AddMoleculeToLibrary("HClO4");
         }
     }
@@ -85,8 +92,8 @@ public class Library : MonoBehaviour
         button.GetComponentInChildren<Text>().text = formula;
         button.transform.SetParent(ScrollViewContent.transform, false);
         button.gameObject.SetActive(true);
-        Debug.Log("to save: " + JsonUtility.ToJson(new { molecules = MoleculeLibrary.ToArray() }));
-        PlayerPrefs.SetString("molecules", JsonUtility.ToJson(MoleculeLibrary.ToArray()));
+        Debug.Log(MoleculeLibrary.Count + "to save: "+ string.Join(" ", MoleculeLibrary.ToArray()));
+        PlayerPrefs.SetString("molecules", string.Join(" ", MoleculeLibrary.ToArray()));
     }
 
     void Update()
