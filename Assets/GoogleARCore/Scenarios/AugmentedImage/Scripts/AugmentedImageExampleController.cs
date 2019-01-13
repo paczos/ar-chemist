@@ -39,6 +39,7 @@ namespace GoogleARCore.Examples.AugmentedImage
         public AugmentedImageVisualizer AtomVisualizerPrefab;
         public GameObject CurrentMoleculeLabel;
         public AudioSource successfulDetectionSound;
+        public Button RestartButton;
         /// <summary>
         /// The overlay containing the fit to scan user guide.
         /// </summary>
@@ -50,7 +51,10 @@ namespace GoogleARCore.Examples.AugmentedImage
         private readonly List<AugmentedImage> m_TempAugmentedImages = new List<AugmentedImage>();
 
 
-
+        public void RestartScene()
+        {
+            Application.LoadLevel(Application.loadedLevel);
+        }
         public void ResetCurrentMolecule()
         {
             Visualizers.Clear();
@@ -110,6 +114,7 @@ namespace GoogleARCore.Examples.AugmentedImage
             if (Visualizers.Count != 0)
             {
                 ClearButton.gameObject.SetActive(true);
+                RestartButton.gameObject.SetActive(true);
             }
             foreach (var visualizer in Visualizers.Values)
             {

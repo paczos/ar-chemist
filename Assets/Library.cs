@@ -33,6 +33,7 @@ public class Library : MonoBehaviour
             //AddMoleculeToLibrary("H2SO4");
              AddMoleculeToLibrary("HNO3");
             AddMoleculeToLibrary("H2O");
+            AddMoleculeToLibrary("CO2");
             //AddMoleculeToLibrary("H2SO3");
             //AddMoleculeToLibrary("HCN");
             // AddMoleculeToLibrary("H3BO3");

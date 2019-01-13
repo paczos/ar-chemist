@@ -1,23 +1,3 @@
-//-----------------------------------------------------------------------
-// <copyright file="ExamplePreprocessBuild.cs" company="Google">
-//
-// Copyright 2018 Google Inc. All Rights Reserved.
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-// http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-//
-// </copyright>
-//-----------------------------------------------------------------------
-
 namespace GoogleARCoreInternal
 {
     using System.Collections.Generic;
@@ -40,16 +20,15 @@ namespace GoogleARCoreInternal
             _AddExampleScene(new ExampleScene()
                 {
                     ProductName = "CV U3D",
-                    PackageName = "com.google.ar.core.examples.unity.computervision",
+                    PackageName = "com.google.ar.core.archemist",
                     SceneGuid = "5ef0f7f7f2c7b4285b707265348bbffd",
                     IconGuid = "7c556c651080f499d9eaeea95d392d80"
                 });
             _AddExampleScene(new ExampleScene()
                 {
-                    ProductName = "AugmentedImage U3D",
+                    ProductName = "AR Chemist",
                     PackageName = "com.google.ar.core.examples.unity.augmentedimage",
                     SceneGuid = "be567d47d3ab94b3badc5b211f535a24",
-                    IconGuid = "0bf81216732894b46b8b5437b1acc57a"
                 });
             _AddExampleScene(new ExampleScene()
                 {
