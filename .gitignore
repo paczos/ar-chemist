@@ -1,0 +1,14 @@
+# Unity generated
+Builds/
+Temp/
+Library/
+obj/
+# Visual Studio / MonoDevelop generated
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.userprefs
+# OS generated
+.DS_Store
+/.vs/arcore-unity-sdk-master/v15/Server/sqlite3
